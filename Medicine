@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medication Side Effects</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Medication Side Effects</h1>
+    </header>
+    
+    <div class="search-box">
+      <input type="text" id="medicationInput" placeholder="Enter medication name..." />
+      <button onclick="searchMedication()">Search</button>
+    </div>
+    
+    <div id="results">
+      <!-- Side effects will be displayed here -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>we 
+/* Basic page layout and blue flower theme */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('blue-flowers.jpg'); /* Replace with your blue flower image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  color: #007BFF; /* Blue text color */
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  margin-bottom: 20px;
+}
+
+#medicationInput {
+  width: 300px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #007BFF;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#results {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #333;
+}
+function searchMedication() {
+  const medication = document.getElementById('medicationInput').value;
+  
+  if (medication === '') {
+    document.getElementById('results').innerHTML = 'Please enter a medication name.';
+    return;
+  }
+  
+  // In the future, we'll call an API here to get the side effects.
+  // For now, just display a dummy message.
+  document.getElementById('results').innerHTML = `Showing side effects for: <strong>${medication}</strong>`;
+}
+https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:{medication_name} 
