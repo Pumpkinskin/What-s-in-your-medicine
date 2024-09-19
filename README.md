@@ -1,27 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Medication Side Effects</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="container">
-    <header>
-      <h1>Medication Side Effects</h1>
-    </header>
-    
-    <div class="search-box">
-      <input type="text" id="medicationInput" placeholder="Enter medication name..." />
-      <button onclick="searchMedication()">Search</button>
-    </div>
-    
-    <div id="results">
-      <!-- Side effects will be displayed here -->
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+function searchMedication() {
+  const medication = document.getElementById('medicationInput').value;
+  
+  if (medication === '') {
+    document.getElementById('results').innerHTML = 'Please enter a medication name.';
+    return;
+  }
+  
+  // In the future, we'll call an API here to get the side effects.
+  // For now, just display a dummy message.
+  document.getElementById('results').innerHTML = `Showing side effects for: <strong>${medication}</strong>`;
+}
